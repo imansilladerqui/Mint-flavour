@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, $primary, $secondary);
+  min-height: 30vh;
+
+  .row {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 3.25em;
+    border-bottom: 1px solid $hr;
+
+    .container {
+      height: 100%;
+      width: 100%;
+      max-width: 940px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(
+    legacy-direction($direction),
+    $color-stops
+  );
+  background: linear-gradient($direction, $color-stops);
+}

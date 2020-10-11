@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 2em;
+  background: $quaternary;
+
+  .status {
+    display: flex;
+    flex-direction: row;
+    padding-left: 2em;
+
+    .statusButtonOnline {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background: $primary;
+    }
+
+    .statusButtonOffline {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background: $denial;
+    }
+
+    .statusText {
+      padding-left: 0.5em;
+    }
+  }
+
+  .buttonContainer {
+    padding-right: 2em;
+
+    .messageButton {
+      position: absolute;
+      right: 0;
+      bottom: -30px;
+      margin-right: 2em;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(to right, $primary, $secondary);
+      border-radius: 50%;
+
+      i {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 25px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Name & Pitch
 
-## Available Scripts
+Mint-Flavour
 
-In the project directory, you can run:
+An beta application for Q-menta.
 
-### `npm start`
+## Project Status
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### In progress:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project is currently in development. Users can add messages to a user personal information.
 
-### `npm test`
+## Installation and Setup Instructions
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Clone:
 
-### `npm run build`
+Clone down this repository. You will need `npm` installed globally on your machine.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Installation:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Testing:
 
-### `npm run eject`
+`npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Starting in dev:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### in Browser:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`localhost:3000/`
 
-## Learn More
+## Consideration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- I used FontAwesome icons, is not like PDF design but is faster to show a model.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- I used Random URL images to user profile images. Same as above.
 
-### Code Splitting
+- I built an API call made by axios. I didn't used it. I fake a return API call in the Redux Store
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- I show an alert in icons actions to show the functionality to build.
 
-### Analyzing the Bundle Size
+- Is built the online/offline user status logic.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Functional Requirements
 
-### Making a Progressive Web App
+First of all, I consider that the FRONTEND only shows data and draw the UI, I always avoid to make the logic there. Off course can be done.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Functional Requirements #3:
+  **From the UI**: Add an "add a comment icon" in the right side of the selected comment, onclick show an input. Like the input that already exists. If a message has nestedMessages, show below the parent message with a padding in the left side.
+  **From the FRONTEND**: After the user submit I will send a user object, parent-message id and the message to an endpoint.
+  **From the BACKEND**: In the backend receive the data, and push the message to an nestedMessage attribute in each message that already exists.
 
-### Advanced Configuration
+- Functional Requirements #4:
+  **From the UI**: Add an "like icon" below the message. Show likes for every message and If User likes the button turns into anothe color
+  **From the FRONTEND**: After the user likes a message, I will send a userId, and the messageId to an endpoint. When I received the data I check with if the loggedUserId has likes and return true to show the like status in every message.
+  **From the BACKEND**: In the backend receive the data, and I created an likes attribute in each message in the messages object, with the userId and the count of likes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Functional Requirements #5:
+  **From the UI**: The user clicks on search icon, show an input in the space between in the header.
+  **From the FRONTEND**: After the enters a word, I will send the query to an endpoint.
+  **From the BACKEND**: In the backend receive the data, and makes a filter in the message object searching the messages that contains the query. After that I return an array with the result.
 
-### Deployment
+- Functional Requirements #6:
+  **Chart**: I didn't really use a lot of charts. I know that D3.js is really a good library (Google has one library too). I don't see to much trouble to make a chart considering that you have the dateTime of every message. You have to group the messages in days, months, years, whatever, and show the count of how many message was in that period.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Non-Functional Requirements
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Question #4:
+  **From the BACKEND**: If you have an API that receive a userId and return a messages for that user, i couldn't see what scalability problem you would have.

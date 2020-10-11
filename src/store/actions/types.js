@@ -1,0 +1,5 @@
+export const GET_USER = "GET_USER";
+export const GET_STATUS_USER = "GET_STATUS_USER";
+export const GET_MESSAGES = "GET_MESSAGES";
+export const DELETE_MESSAGE = "DELETE_MESSAGE";
+export const SET_NEW_MESSAGE = "SET_NEW_MESSAGE";
